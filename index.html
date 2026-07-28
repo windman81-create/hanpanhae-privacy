@@ -2,174 +2,127 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>개인정보처리방침 - 한판해</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 | 한판해</title>
 <style>
+  :root {
+    --ink: #1b2330;
+    --ink-soft: #4a5568;
+    --ink-faint: #7c8798;
+    --rule: #dfe3ea;
+    --paper: #fbfbfc;
+    --accent: #1f4a7a;
+  }
+  * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
-                 "Noto Sans KR", "Malgun Gothic", sans-serif;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 20px 80px;
-    line-height: 1.7;
-    color: #222;
-    background: #fafafa;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
   }
-  h1 { font-size: 24px; margin-bottom: 4px; }
-  .updated { color: #777; font-size: 14px; margin-bottom: 32px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 40px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .meta { font-size: 14px; color: var(--ink-faint); margin: 0; }
+  .lede { color: var(--ink-soft); margin: 0 0 40px; }
   h2 {
-    font-size: 18px;
-    margin-top: 36px;
-    border-left: 4px solid #2e7d5b;
-    padding-left: 10px;
+    font-size: 18px; font-weight: 600; margin: 44px 0 14px;
+    padding-left: 14px; border-left: 3px solid var(--accent); letter-spacing: -0.01em;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 14px;
+  h3 { font-size: 15px; font-weight: 600; margin: 26px 0 10px; color: var(--ink-soft); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .note { color: var(--ink-faint); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 14px; }
+  th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.6; }
+  th { background: #f2f4f7; font-weight: 600; font-size: 13px; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-faint); }
+  @media (max-width: 560px) {
+    .wrap { padding: 36px 18px 72px; }
+    h1 { font-size: 23px; }
+    table, th, td { font-size: 13px; }
+    th, td { padding: 10px 7px; }
   }
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px 10px;
-    text-align: left;
-    vertical-align: top;
-  }
-  th { background: #eef5f0; }
-  ul { padding-left: 20px; }
-  .contact {
-    background: #eef5f0;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-top: 16px;
-  }
-  footer { margin-top: 48px; font-size: 13px; color: #999; }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>개인정보처리방침</h1>
-<p class="updated">시행일: 2026년 6월 29일</p>
+<header>
+  <h1>개인정보처리방침</h1>
+  <p class="meta">한판해 (Pass &amp; Play Board Game) &middot; 시행일: 2026년 7월 28일</p>
+</header>
 
-<p>
-"한판해"(이하 "본 앱")는 이용자의 개인정보를 중요하게 생각하며,
-관련 법령을 준수하기 위하여 다음과 같이 개인정보처리방침을 안내합니다.
-</p>
+<p class="lede">"한판해"(이하 "본 앱")는 이용자의 개인정보를 중요하게 생각하며, 관련 법령을 준수하기 위하여 다음과 같이 개인정보처리방침을 안내합니다.</p>
 
 <h2>1. 수집하는 개인정보 항목</h2>
-<p>
-본 앱은 회원가입, 로그인 등 계정 생성 절차를 운영하지 않습니다.
-이름, 이메일, 전화번호 등 <strong>개인을 식별할 수 있는 정보를 직접 수집하지 않습니다.</strong>
-</p>
+<p>본 앱은 회원가입, 로그인 등 계정 생성 절차를 운영하지 않습니다. 이름, 이메일, 전화번호 등 개인을 식별할 수 있는 정보를 직접 수집하지 않습니다.</p>
 
 <h3>온라인 대전 기능</h3>
-<p>
-온라인 대전(리버시, 오목, 체스, 숫자야구, 윷놀이)은 방을 생성하면
-임의로 생성되는 6자리 숫자 코드를 통해 다른 이용자와 매칭됩니다.
-이 과정에서 저장되는 정보는 다음과 같습니다.
-</p>
+<p>온라인 대전(리버시, 오목, 체스, 숫자야구, 윷놀이)은 방을 생성하면 임의로 생성되는 6자리 숫자 코드를 통해 다른 이용자와 매칭됩니다. 이 과정에서 저장되는 정보는 다음과 같습니다.</p>
 <ul>
   <li>방 입장 코드 (6자리 임의의 숫자)</li>
   <li>게임 진행 상태 (말의 위치, 턴 순서, 점수 등 게임 데이터)</li>
-  <li>접속 상태 (연결됨/연결 끊김 등)</li>
+  <li>접속 상태 (연결됨 / 연결 끊김 등)</li>
+  <li>채팅 메시지 (앱이 사전에 제공하는 고정 문구 중 이용자가 선택한 항목이며, 이용자가 직접 입력하는 자유 채팅은 지원하지 않습니다)</li>
 </ul>
-<p>
-위 정보에는 이용자의 이름, 닉네임, 기기 식별값, 계정 정보가 포함되지 않으며,
-게임 종료 또는 연결 종료 시 자동으로 삭제되도록 운영하고 있습니다
-(일부 게임 모드는 비정상 종료 시 데이터가 지연 삭제될 수 있습니다).
-</p>
+<p>위 정보에는 이용자의 이름, 닉네임, 기기 식별값, 계정 정보가 포함되지 않으며, 게임 종료 또는 연결 종료 시 삭제되도록 운영하고 있습니다.</p>
 
 <h2>2. 자동으로 수집되는 정보 (광고 및 분석 SDK)</h2>
-<p>
-본 앱은 무료 서비스 제공을 위해 광고 SDK를 사용하고 있으며,
-이 과정에서 아래와 같은 정보가 자동으로 수집될 수 있습니다.
-이는 본 앱이 직접 수집하는 것이 아니라, 사용 중인 외부 SDK가
-표준적으로 수집하는 정보입니다.
-</p>
-
+<p>본 앱은 무료 서비스 제공을 위해 광고 및 분석 SDK를 사용하고 있으며, 이 과정에서 아래와 같은 정보가 자동으로 수집될 수 있습니다. 이는 본 앱이 직접 수집하는 것이 아니라, 사용 중인 외부 SDK가 표준적으로 수집하는 정보입니다.</p>
 <table>
-  <tr><th>제공자/SDK</th><th>수집 정보</th><th>목적</th></tr>
-  <tr>
-    <td>Google AdMob<br>(Google Mobile Ads SDK)</td>
-    <td>광고 식별자(Advertising ID), 기기 정보, 대략적 위치(국가 단위), 광고 상호작용 정보</td>
-    <td>맞춤 광고 게재 및 광고 효과 측정</td>
-  </tr>
-  <tr>
-    <td>Firebase Analytics</td>
-    <td>앱 사용 화면, 세션 정보, 기기 모델/OS 버전 등 통계용 정보</td>
-    <td>앱 이용 통계 분석 및 서비스 개선</td>
-  </tr>
+  <thead>
+    <tr><th>제공자 / SDK</th><th>수집 정보</th><th>목적</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google AdMob<br>(Google Mobile Ads SDK)</td>
+      <td>광고 식별자(Advertising ID), 기기 정보, 대략적 위치(국가 단위), 광고 상호작용 정보</td>
+      <td>맞춤 광고 게재 및 광고 효과 측정</td>
+    </tr>
+    <tr>
+      <td>Firebase Analytics</td>
+      <td>앱 사용 화면, 세션 정보, 기기 모델 / OS 버전 등 통계용 정보</td>
+      <td>앱 이용 통계 분석 및 서비스 개선</td>
+    </tr>
+  </tbody>
 </table>
-
-<p>
-이용자는 기기의 설정(Android 설정 &gt; 개인정보 보호 &gt; 광고)에서
-광고 식별자 재설정 또는 맞춤 광고 수신을 거부할 수 있습니다.
-</p>
+<p class="note">이용자는 기기의 설정(Android 설정 &gt; 개인정보 보호 &gt; 광고)에서 광고 식별자를 재설정하거나 맞춤 광고 수신을 거부할 수 있습니다.</p>
 
 <h2>3. 개인정보의 보유 및 이용 기간</h2>
-<p>
-본 앱은 별도의 회원 정보를 보유하지 않으므로, 게임 진행을 위해
-임시로 생성된 방 데이터는 게임 종료 또는 연결 종료 시 삭제됩니다.
-광고/분석 SDK가 수집하는 정보는 각 제공자(Google)의 정책에 따라 관리됩니다.
-</p>
+<p>본 앱은 별도의 회원 정보를 보유하지 않으므로, 게임 진행을 위해 임시로 생성된 방 데이터는 게임 종료 또는 연결 종료 시 삭제됩니다. 광고 및 분석 SDK가 수집하는 정보는 각 제공자(Google)의 정책에 따라 관리됩니다.</p>
 
 <h3>데이터 삭제 요청 방법</h3>
-<p>
-본 앱은 이용자가 별도로 요청하지 않아도, 다음과 같은 방식으로
-데이터가 자동으로 삭제되는 구조를 갖추고 있습니다.
-</p>
+<p>본 앱은 이용자가 별도로 요청하지 않아도, 다음과 같은 방식으로 데이터가 삭제되는 구조를 갖추고 있습니다.</p>
 <ul>
-  <li><strong>온라인 대전 중 데이터 삭제</strong>: 이용자가 방을 나가거나
-  앱 연결을 종료하는 즉시, 해당 방의 게임 데이터(방 코드, 게임 진행
-  상태, 접속 상태)가 서버에서 자동으로 삭제됩니다. 이용자는 언제든지
-  앱 내에서 방을 나가는 것만으로 자신과 관련된 게임 데이터를
-  즉시 삭제할 수 있습니다.</li>
-  <li><strong>계정 데이터 없음</strong>: 본 앱은 회원가입 및 로그인
-  기능이 없어 이용자를 식별할 수 있는 별도의 계정 데이터를 보유하지
-  않으므로, 삭제를 요청할 대상 데이터 자체가 존재하지 않습니다.</li>
+  <li><strong>온라인 대전 중 데이터 삭제</strong>: 이용자가 방을 나가거나 앱 연결을 종료하면 해당 방의 게임 데이터(방 코드, 게임 진행 상태, 접속 상태, 채팅 메시지)가 서버에서 삭제됩니다. 다만 앱이 비정상적으로 종료되거나 네트워크가 갑작스럽게 끊기는 경우 삭제가 지연될 수 있으며, 이 경우에도 해당 데이터는 이용자를 식별할 수 없는 정보로만 구성됩니다.</li>
+  <li><strong>계정 데이터 없음</strong>: 본 앱은 회원가입 및 로그인 기능이 없어 이용자를 식별할 수 있는 별도의 계정 데이터를 보유하지 않으므로, 삭제를 요청할 대상 데이터 자체가 존재하지 않습니다.</li>
 </ul>
-<p>
-그 외 광고 식별자 등 SDK가 자동으로 수집하는 정보의 삭제를 원하시는
-경우, 기기의 설정(Android 설정 &gt; 개인정보 보호 &gt; 광고 &gt;
-광고 ID 삭제)에서 직접 재설정 또는 삭제하실 수 있습니다. 추가
-문의사항은 아래 연락처로 문의해 주시면 신속히 안내해 드리겠습니다.
-</p>
+<p>그 외 광고 식별자 등 SDK가 자동으로 수집하는 정보의 삭제를 원하시는 경우, 기기의 설정(Android 설정 &gt; 개인정보 보호 &gt; 광고 &gt; 광고 ID 삭제)에서 직접 재설정 또는 삭제하실 수 있습니다. 추가 문의사항은 아래 연락처로 문의해 주시면 신속히 안내해 드리겠습니다.</p>
 
 <h2>4. 개인정보의 제3자 제공</h2>
-<p>
-본 앱은 이용자의 개인정보를 별도로 수집하지 않으므로 제3자에게 제공하지 않습니다.
-단, 광고 게재를 위해 Google AdMob에 위 2항의 자동 수집 정보가 전달될 수 있습니다.
-</p>
+<p>본 앱은 이용자의 개인정보를 별도로 수집하지 않으므로 제3자에게 제공하지 않습니다. 단, 광고 게재를 위해 Google AdMob에 위 2항의 자동 수집 정보(광고 식별자, 대략적 위치 등)가 전달될 수 있습니다.</p>
 
 <h2>5. 이용자의 권리</h2>
-<p>
-이용자는 기기의 광고 설정을 통해 맞춤 광고 수신을 거부하거나
-광고 식별자를 재설정할 수 있습니다. 본 앱은 별도의 회원 식별 정보를
-보유하지 않으므로, 개별 이용자에 대한 정보 조회·삭제 요청은
-적용 대상이 제한적일 수 있습니다.
-</p>
+<p>이용자는 기기의 광고 설정을 통해 맞춤 광고 수신을 거부하거나 광고 식별자를 재설정할 수 있습니다. 본 앱은 별도의 회원 식별 정보를 보유하지 않으므로, 개별 이용자에 대한 정보 조회 및 삭제 요청은 적용 대상이 제한적일 수 있습니다.</p>
 
 <h2>6. 만 14세 미만 아동의 개인정보 보호</h2>
-<p>
-본 앱은 만 14세 미만 아동으로부터 개인정보를 의도적으로 수집하지 않습니다.
-</p>
+<p>본 앱은 만 14세 미만 아동으로부터 개인정보를 의도적으로 수집하지 않습니다.</p>
 
 <h2>7. 개인정보처리방침의 변경</h2>
-<p>
-본 개인정보처리방침은 법령, 정책 또는 서비스 변경에 따라 수정될 수 있으며,
-변경 시 본 페이지를 통해 공지합니다.
-</p>
+<p>본 개인정보처리방침은 법령, 정책 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 본 페이지를 통해 공지합니다.</p>
 
 <h2>8. 문의처</h2>
-<div class="contact">
-  <p>개인정보 관련 문의사항이 있으시면 아래로 연락해 주세요.</p>
-  <p>이메일: <strong>myapphelpdesk7@gmail.com</strong></p>
+<p>개인정보 관련 문의사항이 있으시면 아래로 연락해 주세요.</p>
+<p>이메일: <a href="mailto:myapphelpdesk7@gmail.com">myapphelpdesk7@gmail.com</a></p>
+
+<footer>본 페이지는 한판해(BoardGameHub2) 앱의 Google Play 등록을 위한 개인정보처리방침입니다.</footer>
+
 </div>
-
-<footer>
-  본 페이지는 한판해(BoardGameHub2) 앱의 Google Play 등록을 위한
-  개인정보처리방침입니다.
-</footer>
-
 </body>
 </html>
