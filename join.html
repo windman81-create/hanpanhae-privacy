@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" id="html">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>한판해 — 초대</title>
+<title>한판해 Hanpanhae — Invite</title>
 <!--
   🔗 초대 링크 착지 페이지. 저장소 `hanpanhae-privacy` 의 `join.html` 로 올린다.
   주소: https://windman81-create.github.io/hanpanhae-privacy/join?g=chess&c=123456
@@ -32,16 +32,36 @@
 <body>
 <div class="card">
   <h1>🎮 한판해</h1>
-  <p id="msg">초대를 여는 중…</p>
+  <p id="msg">…</p>
   <div class="code" id="code"></div>
-  <a class="btn open" id="open" href="#">앱에서 바로 참가</a>
-  <a class="btn install" id="install" href="#">앱이 없어요 — 설치하고 참가</a>
-  <p class="small">앱이 있는데 안 열리면, 이 페이지를 크롬에서 열어 주세요.</p>
+  <a class="btn open" id="open" href="#"></a>
+  <a class="btn install" id="install" href="#"></a>
+  <p class="small" id="hint"></p>
 </div>
 <script>
 (function(){
   var PKG = "com.familykim81.boardgamehub";
-  var GAMES = {reversi:"리버시", omok:"오목", chess:"체스", baseball:"숫자야구", yut:"윷놀이", wake:"일어나!"};
+  // 🌐 브라우저 언어가 한국어면 한국어, 아니면 영어 (앱 문구와 같은 갈래)
+  var ko = /^ko/i.test(navigator.language || "");
+  var T = ko ? {
+    games: {reversi:"리버시", omok:"오목", chess:"체스", baseball:"숫자야구", yut:"윷놀이", wake:"일어나!"},
+    opening: "초대를 여는 중…", invited: function(g){ return g + " 한판에 초대받았어요!"; },
+    bad: "초대 링크가 올바르지 않아요. 앱에서 방 코드를 직접 넣어 주세요.",
+    open: "앱에서 바로 참가", install: "앱이 없어요 — 설치하고 참가",
+    hint: "앱이 있는데 안 열리면, 이 페이지를 크롬에서 열어 주세요."
+  } : {
+    games: {reversi:"Reversi", omok:"Omok", chess:"Chess", baseball:"Number Baseball", yut:"Yut Nori", wake:"Wake Up!"},
+    opening: "Opening your invite…", invited: function(g){ return "You're invited to a round of " + g + "!"; },
+    bad: "This invite link isn't valid. Please enter the room code in the app.",
+    open: "Join in the app", install: "Don't have the app? Install and join",
+    hint: "Have the app but it didn't open? Open this page in Chrome."
+  };
+  var GAMES = T.games;
+  document.getElementById("html").lang = ko ? "ko" : "en";
+  document.getElementById("msg").textContent = T.opening;
+  document.getElementById("open").textContent = T.open;
+  document.getElementById("install").textContent = T.install;
+  document.getElementById("hint").textContent = T.hint;
   var q = new URLSearchParams(location.search);
   var g = q.get("g") || "", c = q.get("c") || "";
   var ok = GAMES.hasOwnProperty(g) && /^[0-9]{6}$/.test(c);
@@ -56,11 +76,11 @@
 
   document.getElementById("install").href = play;
   if (!ok) {
-    document.getElementById("msg").textContent = "초대 링크가 올바르지 않아요. 앱에서 방 코드를 직접 넣어 주세요.";
+    document.getElementById("msg").textContent = T.bad;
     document.getElementById("open").style.display = "none";
     return;
   }
-  document.getElementById("msg").textContent = GAMES[g] + " 한판에 초대받았어요!";
+  document.getElementById("msg").textContent = T.invited(GAMES[g]);
   document.getElementById("code").textContent = c;
 
   var isAndroid = /Android/i.test(navigator.userAgent);
