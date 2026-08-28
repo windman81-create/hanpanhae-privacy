@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한판해 — 초대</title>
+<!--
+  🔗 초대 링크 착지 페이지. 저장소 `hanpanhae-privacy` 의 `join.html` 로 올린다.
+  주소: https://windman81-create.github.io/hanpanhae-privacy/join?g=chess&c=123456
+  (GitHub Pages 는 /join 을 /join.html 로 준다)
+
+  하는 일 — 순서대로:
+   1) 앱이 있으면: intent:// 로 앱을 연다(hanpanhae://join?g=…&c=…). 크롬이 앱을 못 찾으면 fallback 으로 간다.
+   2) 앱이 없으면: Play 스토어로 보내되 referrer 에 g=…&c=… 를 실어, 설치 뒤 첫 실행에 그 방으로 가게 한다.
+   3) 자동으로 안 되는 브라우저(카톡 안 브라우저 등)를 위해 큰 버튼 둘을 보여 준다.
+
+  ☠️ 앱 쪽(JoinLink.kt)과 모양이 같아야 한다 — g 는 reversi|omok|chess|baseball|yut|wake, c 는 6자리 숫자.
+-->
+<style>
+  body{margin:0;background:#2b1d12;color:#f3e1b8;font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;
+       display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
+  .card{padding:32px 24px;max-width:420px}
+  h1{font-size:22px;margin:0 0 8px}
+  p{margin:8px 0;color:#d9c9b6;line-height:1.5}
+  .code{font-size:32px;letter-spacing:.2em;color:#c9a84c;font-weight:700;margin:16px 0}
+  a.btn{display:block;margin:12px auto;padding:16px;border-radius:14px;text-decoration:none;font-weight:700;font-size:17px}
+  .open{background:#c9a84c;color:#2b1d12}
+  .install{background:#5d4a3a;color:#f3e1b8}
+  .small{font-size:13px;color:#9e958d}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🎮 한판해</h1>
+  <p id="msg">초대를 여는 중…</p>
+  <div class="code" id="code"></div>
+  <a class="btn open" id="open" href="#">앱에서 바로 참가</a>
+  <a class="btn install" id="install" href="#">앱이 없어요 — 설치하고 참가</a>
+  <p class="small">앱이 있는데 안 열리면, 이 페이지를 크롬에서 열어 주세요.</p>
+</div>
+<script>
+(function(){
+  var PKG = "com.familykim81.boardgamehub";
+  var GAMES = {reversi:"리버시", omok:"오목", chess:"체스", baseball:"숫자야구", yut:"윷놀이", wake:"일어나!"};
+  var q = new URLSearchParams(location.search);
+  var g = q.get("g") || "", c = q.get("c") || "";
+  var ok = GAMES.hasOwnProperty(g) && /^[0-9]{6}$/.test(c);
+
+  var play = "https://play.google.com/store/apps/details?id=" + PKG;
+  if (ok) play += "&referrer=" + encodeURIComponent("g=" + g + "&c=" + c);
+
+  var app = "hanpanhae://join?g=" + g + "&c=" + c;
+  // 크롬 전용 형식: 앱이 있으면 열고, 없으면 S.browser_fallback_url 로 간다.
+  var intent = "intent://join?g=" + g + "&c=" + c + "#Intent;scheme=hanpanhae;package=" + PKG +
+               ";S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
+
+  document.getElementById("install").href = play;
+  if (!ok) {
+    document.getElementById("msg").textContent = "초대 링크가 올바르지 않아요. 앱에서 방 코드를 직접 넣어 주세요.";
+    document.getElementById("open").style.display = "none";
+    return;
+  }
+  document.getElementById("msg").textContent = GAMES[g] + " 한판에 초대받았어요!";
+  document.getElementById("code").textContent = c;
+
+  var isAndroid = /Android/i.test(navigator.userAgent);
+  var isChrome = /Chrome\//i.test(navigator.userAgent) && !/EdgA|SamsungBrowser|KAKAOTALK|NAVER/i.test(navigator.userAgent);
+  document.getElementById("open").href = isChrome ? intent : app;
+
+  if (isAndroid) {
+    // 자동으로 한 번 시도한다. 앱이 없으면 크롬은 fallback(Play)으로, 다른 브라우저는 그대로 남아 버튼을 보여 준다.
+    setTimeout(function(){ location.href = isChrome ? intent : app; }, 300);
+  }
+})();
+</script>
+</body>
+</html>
