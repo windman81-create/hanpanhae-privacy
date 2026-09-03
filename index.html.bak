@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 | 한판해</title>
+<style>
+  :root {
+    --ink: #1b2330;
+    --ink-soft: #4a5568;
+    --ink-faint: #7c8798;
+    --rule: #dfe3ea;
+    --paper: #fbfbfc;
+    --accent: #1f4a7a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 40px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .meta { font-size: 14px; color: var(--ink-faint); margin: 0; }
+  .lede { color: var(--ink-soft); margin: 0 0 40px; }
+  h2 {
+    font-size: 18px; font-weight: 600; margin: 44px 0 14px;
+    padding-left: 14px; border-left: 3px solid var(--accent); letter-spacing: -0.01em;
+  }
+  h3 { font-size: 15px; font-weight: 600; margin: 26px 0 10px; color: var(--ink-soft); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .note { color: var(--ink-faint); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 14px; }
+  th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.6; }
+  th { background: #f2f4f7; font-weight: 600; font-size: 13px; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-faint); }
+  @media (max-width: 560px) {
+    .wrap { padding: 36px 18px 72px; }
+    h1 { font-size: 23px; }
+    table, th, td { font-size: 13px; }
+    th, td { padding: 10px 7px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>개인정보처리방침</h1>
+  <p class="meta">한판해 (Pass &amp; Play Board Game) &middot; 시행일: 2026년 8월 3일 &middot; 이전 방침 시행일: 2026년 7월 28일</p>
+</header>
+
+<p class="lede">"한판해"(이하 "본 앱")는 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관련 법령을 준수하기 위하여 다음과 같이 개인정보처리방침을 안내합니다.</p>
+
+<h2>1. 수집하는 정보와 수집 방법</h2>
+<p>본 앱은 <strong>아이디·비밀번호를 만들거나 이름·이메일·전화번호를 입력하는 절차가 없습니다.</strong> 다만 대전 상대와의 연결, 게임 진행도 보관, 광고 게재를 위해 아래 정보가 처리됩니다.</p>
+
+<h3>가. 계정 식별자 (자동 생성)</h3>
+<ul>
+  <li><strong>익명 계정 식별자</strong>: 앱을 처음 실행할 때 Firebase Authentication이 자동으로 발급하는 임의의 문자열입니다. 이용자의 이름·이메일 등 실제 신원 정보는 포함되지 않습니다.</li>
+  <li><strong>Google Play 게임즈 계정 정보</strong>: 이용자의 기기가 Play 게임즈에 로그인되어 있는 경우, 본 앱은 위 익명 식별자를 해당 계정에 연결합니다. 이때 Play 게임즈가 제공하는 <strong>플레이어 ID, 게이머태그(표시 이름), 프로필 이미지 주소</strong>가 인증 정보로 저장됩니다. 연결에 실패하거나 기기가 이를 지원하지 않으면 익명 상태로 계속 이용할 수 있습니다.</li>
+</ul>
+<p class="note">계정 연결 상태는 체스&middot;오목&middot;리버시의 <strong>1인 플레이 화면</strong>과 온라인 <strong>방 만들기&middot;입장 화면</strong> 아래쪽에서 확인할 수 있으며, 같은 자리에서 다른 계정으로 연결하거나 표시 이름을 다시 뽑을 수 있습니다.</p>
+
+<h3>나. 온라인 대전 데이터</h3>
+<p>온라인 대전(리버시, 오목, 체스, 숫자야구, 윷놀이)은 방을 만들면 임의로 생성되는 6자리 숫자 코드로 상대와 연결됩니다. 대전이 진행되는 동안 서버에 저장되는 정보는 다음과 같습니다.</p>
+<ul>
+  <li>방 입장 코드 (6자리 임의의 숫자)</li>
+  <li>게임 진행 상태 (말의 위치, 턴 순서, 점수 등)</li>
+  <li>접속 상태 (연결됨 / 연결 끊김 / 나감)</li>
+  <li><strong>표시 이름</strong>: 상대 화면에 보이는 이름입니다. Play 게임즈 계정을 연결한 경우 <strong>게이머태그</strong>가, 익명 상태인 경우 앱이 <strong>자동으로 생성한 별명</strong>("빨간 나이트" 등)이 사용됩니다. 이용자가 직접 입력하는 닉네임은 지원하지 않습니다.</li>
+  <li>채팅 메시지: 앱이 미리 제공하는 고정 문구 중 이용자가 고른 항목의 <strong>번호만</strong> 저장되며, 자유 입력 채팅은 지원하지 않습니다.</li>
+</ul>
+
+<h3>다. 게임 진행도 백업</h3>
+<p>1인 플레이의 진행 상황을 기기 변경·재설치 시 복구할 수 있도록, 위 계정 식별자에 연결하여 다음을 서버에 보관합니다.</p>
+<ul>
+  <li>도전 단계별 클리어 여부와 별 개수, 난이도 해금 상태</li>
+  <li>"오늘의 도전"의 마지막 성공 날짜와 연속 성공 일수</li>
+</ul>
+<p class="note">게임 기록 자체는 기기에 우선 저장되며, 서버 값은 복구·합치기를 위한 사본입니다.</p>
+
+<h3>라. 자동으로 수집되는 정보 (광고 및 분석 SDK)</h3>
+<p>본 앱은 무료 서비스 제공을 위해 아래 SDK를 사용하며, 이는 본 앱이 직접 수집하는 것이 아니라 해당 SDK가 표준적으로 수집하는 정보입니다.</p>
+<table>
+  <thead>
+    <tr><th>제공자 / SDK</th><th>수집 정보</th><th>목적</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google AdMob<br>(Google Mobile Ads SDK)</td>
+      <td>광고 식별자(Advertising ID), 기기 정보, 대략적 위치(국가 단위), 광고 상호작용 정보</td>
+      <td>광고 게재 및 광고 효과 측정</td>
+    </tr>
+    <tr>
+      <td>Google Firebase Analytics</td>
+      <td>앱 인스턴스 ID, 이용한 화면과 세션 정보, 기기 모델 / OS 버전 / 국가<br>그리고 본 앱이 보내는 이용 통계: 게임 종류, 플레이 모드(1인·2인·온라인), 승패 결과, 소요 시간, 도전 단계 번호와 별 개수</td>
+      <td>앱 이용 통계 분석 및 난이도·기능 개선</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">본 앱이 보내는 통계 항목에는 이용자의 이름·표시 이름·계정 식별자·방 코드가 포함되지 않습니다.</p>
+
+<h3>마. 기기 안에만 저장되는 정보 (서버로 전송되지 않음)</h3>
+<ul>
+  <li>효과음·턴 타이머·오목 규칙 등 설정값</li>
+  <li>숫자야구 최고 기록</li>
+  <li>표시 이름과 도전 진행 상황(위 다 항목의 서버 사본과 별개로 기기에도 저장됩니다)</li>
+</ul>
+
+<h2>2. 정보의 이용 목적</h2>
+<ul>
+  <li>온라인 대전 상대와의 연결 및 대국 진행</li>
+  <li>대전 상대 화면에 표시 이름을 보여 주기</li>
+  <li>기기 변경·재설치 시 게임 진행도 복구, 여러 기기에서의 진행도 합치기</li>
+  <li>앱 이용 통계 분석 및 서비스 개선</li>
+  <li>광고 게재 및 광고 효과 측정</li>
+</ul>
+
+<h2>3. 보유 기간 및 파기</h2>
+<table>
+  <thead>
+    <tr><th>구분</th><th>보유 기간</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>온라인 대전 데이터<br>(방 코드, 게임 상태, 표시 이름, 채팅)</td>
+      <td>대국이 끝나고 방을 나가면 서버에서 삭제됩니다.<br><strong>다만 앱이 비정상적으로 종료되거나 네트워크가 갑자기 끊겨 정상적인 종료 절차를 거치지 못한 경우, 해당 방의 데이터가 서버에 남을 수 있습니다.</strong> 이 데이터는 삭제 요청 시 지체 없이 삭제하며, 서비스 개선 과정에서 오래된 방을 자동으로 정리하도록 개선할 예정입니다.</td>
+    </tr>
+    <tr>
+      <td>게임 진행도 백업</td>
+      <td>계정 식별자가 유지되는 동안 보관하며, 삭제 요청 시 지체 없이 삭제합니다.</td>
+    </tr>
+    <tr>
+      <td>계정 식별자<br>(익명 식별자 / 연결된 Play 게임즈 정보)</td>
+      <td>이용자가 삭제를 요청할 때까지 보관합니다.<br>앱을 삭제하거나 앱 데이터를 지우면 <strong>익명</strong> 식별자는 기기와의 연결이 끊어지지만, 서버에 남은 값은 삭제 요청 시 삭제됩니다.</td>
+    </tr>
+    <tr>
+      <td>광고·분석 SDK 수집 정보</td>
+      <td>각 제공자(Google)의 정책에 따라 관리됩니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. 처리위탁 및 제3자 제공</h2>
+<p>본 앱은 이용자의 정보를 판매하거나 제3자에게 제공하지 않습니다. 다만 서비스 운영을 위해 아래와 같이 처리를 위탁하고 있습니다.</p>
+<table>
+  <thead>
+    <tr><th>수탁자</th><th>위탁 업무</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google LLC</td>
+      <td>Firebase Authentication(계정 식별), Firebase Realtime Database(온라인 대전·진행도 보관), Firebase Analytics(이용 통계), Google Play 게임즈 서비스(계정 연결), Google AdMob(광고 게재)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. 개인정보의 국외 이전</h2>
+<p>본 앱이 이용하는 Google의 서비스는 국외에 소재한 서버에서 운영됩니다. 이에 따라 위 정보는 아래와 같이 국외로 이전됩니다.</p>
+<table>
+  <tbody>
+    <tr><th style="width:32%">이전받는 자</th><td>Google LLC</td></tr>
+    <tr><th>이전되는 국가</th><td>미국 등 Google이 데이터센터를 운영하는 국가</td></tr>
+    <tr><th>이전 일시 및 방법</th><td>서비스 이용 시점에 정보통신망을 통해 전송</td></tr>
+    <tr><th>이전 항목</th><td>제1조의 가·나·다·라 항목</td></tr>
+    <tr><th>이전받는 자의 이용 목적 및 보유 기간</th><td>제2조의 목적, 제3조의 기간과 같습니다.</td></tr>
+  </tbody>
+</table>
+<p class="note">국외 이전에 동의하지 않으시는 경우 온라인 대전과 진행도 백업 기능의 이용이 제한될 수 있으며, 오프라인(1인·2인) 플레이는 그대로 이용하실 수 있습니다.</p>
+
+<h2>6. 이용자의 권리와 행사 방법</h2>
+<p>이용자는 본인의 정보에 대해 열람·정정·삭제·처리정지를 요청할 수 있습니다.</p>
+
+<h3>가. 앱에서 직접 삭제하기 (권장)</h3>
+<p>별도의 요청 절차 없이 <strong>앱 안에서 즉시 삭제</strong>할 수 있습니다.</p>
+<ul>
+  <li>체스&middot;오목&middot;리버시 중 하나를 골라 <strong>1인 플레이</strong> 화면으로 들어갑니다. (온라인 <strong>방 만들기&middot;입장</strong> 화면에서도 같습니다.)</li>
+  <li>화면 <strong>아래쪽의 계정 표시줄</strong>을 누릅니다. (예: "📱 이 기기에만 저장됨" 또는 "☁ 계정 연결됨")</li>
+  <li>안내 창에서 <strong>[🗑 내 데이터 삭제]</strong>를 선택합니다.</li>
+  <li>확인 창에 표시된 <strong>숫자를 그대로 입력</strong>하고 [삭제]를 누릅니다. (실수로 지워지는 것을 막기 위한 절차입니다.)</li>
+</ul>
+<p>이때 서버와 기기에서 다음 정보가 삭제됩니다.</p>
+<ul>
+  <li>게임 진행도 백업(도전 단계 클리어 기록·별·해금, 오늘의 도전 연속 일수)</li>
+  <li>계정 식별자(익명 식별자 및 여기에 연결된 Play 게임즈 연결 정보)</li>
+  <li>표시 이름</li>
+</ul>
+<p class="note">삭제 후에도 앱은 그대로 이용하실 수 있으며, 새로운 표시 이름으로 처음부터 시작됩니다. 삭제되는 것은 <strong>본 앱이 만든 계정</strong>이며, 이용자의 Google 계정이나 Play 게임즈 프로필은 삭제되지 않습니다. 기기가 Play 게임즈에 로그인되어 있으면 다음 실행 시 <strong>새로운 빈 계정</strong>이 다시 연결될 수 있습니다.</p>
+
+<h3>나. 이메일로 요청하기</h3>
+<p>앱을 이미 삭제하셨거나 위 방법을 이용하기 어려운 경우, 아래 문의처 이메일로 <strong>"데이터 삭제 요청"</strong>이라고 알려 주시면 확인 후 지체 없이 삭제하고 결과를 회신해 드립니다. 본인 확인을 위해 <strong>표시 이름</strong>(Play 게임즈 계정을 연결하신 경우 <strong>게이머태그</strong>)을 함께 알려 주십시오.</p>
+<p>서버에 남아 있는 온라인 대전 데이터의 삭제도 이 경로로 요청하실 수 있습니다.</p>
+
+<h3>다. 기기에서 직접 처리하기</h3>
+<ul>
+  <li><strong>기기 안의 기록</strong>: Android 설정 &gt; 애플리케이션 &gt; 한판해 &gt; 저장공간 &gt; 데이터 삭제</li>
+  <li><strong>광고 식별자</strong>: Android 설정 &gt; 개인정보 보호 &gt; 광고 &gt; 광고 ID 재설정 또는 삭제</li>
+  <li><strong>맞춤 광고 거부</strong>: 위 광고 설정에서 맞춤 광고 사용 중지</li>
+  <li><strong>Play 게임즈 계정 연결</strong>: Android 설정 &gt; Google &gt; Play 게임즈에서 계정을 변경하거나, Play 게임즈 앱에서 게이머태그를 변경할 수 있습니다.</li>
+</ul>
+<p class="note">익명 상태에서 앱 데이터를 삭제하면 새로운 익명 식별자가 발급되며, 이전 진행도와는 연결되지 않습니다.</p>
+
+<h2>7. 아동의 개인정보 보호</h2>
+<p>본 앱은 만 13세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 법정대리인의 동의 없이 수집하지 않습니다. 만 14세 미만 아동의 정보가 수집된 사실을 확인한 경우 지체 없이 파기합니다.</p>
+
+<h2>8. 안전성 확보 조치</h2>
+<ul>
+  <li>서버와의 통신은 암호화(HTTPS/TLS)된 채널로 이루어집니다.</li>
+  <li>게임 진행도는 <strong>본인의 계정 식별자로만 읽고 쓸 수 있도록</strong> 서버 접근 규칙을 설정하여, 다른 이용자가 접근할 수 없습니다.</li>
+  <li>온라인 대전 데이터는 대전에 필요한 최소한의 항목만 저장하며, 이용자가 직접 입력하는 자유 문장을 저장하지 않습니다.</li>
+</ul>
+
+<h2>9. 개인정보처리방침의 변경</h2>
+<p>본 방침은 법령, 정책 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 본 페이지를 통해 공지합니다. 이용자에게 중요한 변경이 있는 경우 시행일 전에 안내합니다.</p>
+
+<h3>개정 이력</h3>
+<ul>
+  <li><strong>2026년 8월 3일</strong>: 계정 식별자(익명 / Google Play 게임즈 연결), 게임 진행도 백업, 온라인 대전의 표시 이름에 관한 내용을 추가하고, 보유 기간·국외 이전을 구체화했습니다. 아울러 <strong>앱 안에서 직접 데이터를 삭제하는 기능</strong>을 제공하고 그 방법을 안내했습니다.</li>
+  <li>2026년 7월 28일: 최초 시행</li>
+</ul>
+
+<h2>10. 문의처</h2>
+<p>개인정보 관련 문의 및 삭제 요청은 아래로 연락해 주세요.</p>
+<p>이메일: <a href="mailto:myapphelpdesk7@gmail.com">myapphelpdesk7@gmail.com</a></p>
+
+<footer>본 페이지는 한판해 앱의 Google Play 등록을 위한 개인정보처리방침입니다.</footer>
+
+</div>
+</body>
+</html>
